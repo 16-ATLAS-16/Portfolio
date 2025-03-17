@@ -6,11 +6,11 @@
 async function toggleDarkMode () {
     var isDarkMode = await cookieStore.get('darkMode');
     if (isDarkMode === null) {
-        //await cookieStore.set('darkMode', true);
+        await cookieStore.set('darkMode', true);
         isDarkMode = true;
     }
 
-    //await cookieStore.set('darkmode', !isDarkMode);
+    await cookieStore.set('darkmode', !isDarkMode);
     setDarkMode(!isDarkMode);
 }
 
