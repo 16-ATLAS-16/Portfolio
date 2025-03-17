@@ -1,0 +1,68 @@
+label.darkmode {
+    width: 5rem;
+    height: 2rem;
+    position: relative;
+    display: block;
+    background-color: #dadada;
+    border-radius: 2rem;
+    box-shadow: inset 0rem 0.05rem 0.15rem rgba(0, 0, 0, 0.4), inset 0rem -0.05rem 0.15rem rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+label.darkmode:after {
+    content: "";
+    width: 1.5rem;
+    height: 1.5rem;
+    position: absolute;
+    top: 0.25rem;
+    left: 0.25rem;
+    background: linear-gradient(180deg, #121424, #161616);
+    border-radius: 1.8rem;
+    transition: 0.3s;
+    transition-timing-function: cubic-bezier(0.0, 0.5, 1, 1);
+}
+
+label.darkmode:active:after {
+    width: 2rem;
+}
+
+input.darkmode {
+    scale: 0;
+    visibility: hidden;
+}
+
+input.darkmode:checked + label.darkmode {
+    background: #242424;
+    box-shadow: inset 0rem -0.05rem 0.15rem rgba(255, 255, 255, 0.4);
+}
+
+input.darkmode:checked + label.darkmode::after {
+    left: 4.75rem;
+    transform: translateX(-100%);
+    background: linear-gradient(180deg, #ededed, #d8d8d8);
+}
+
+.bg {
+    margin: 0;
+
+    width: 100vw;
+    height: 100vw;
+
+    display: flex;
+    flex-direction: column;
+    z-index: -1;
+
+    align-items: center;
+    justify-content: center;
+
+    background-color: #ebebeb;
+    color: #161616;
+
+    transition: 0.3s;
+}
+
+.bg-dark {
+    background-color: #161616 !important;
+    color: #ebebeb !important;
+}
